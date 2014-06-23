@@ -1,0 +1,153 @@
+// MIXINS
+// Shortcuts for standard codes
+@mixin user-select (){
+    user-select: none;
+}
+
+@mixin boxsizing ( $box: border-box ) {
+    -webkit-box-sizing: $box;
+       -moz-box-sizing: $box;
+            box-sizing: $box;
+}
+
+@mixin transition ( $trans: all .1s linear ){
+  transition: $trans;
+}
+
+@mixin user-select (){
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+@mixin opacity ( $op ){
+  filter: alpha( opacity=$op );
+  opacity: $op/100;
+}
+
+@mixin gradient ( $fallback, $origin: left, $start: #fff, $stop: #000 ) {
+    background: -webkit-linear-gradient($origin, $start, $stop);
+    background: -moz-linear-gradient($origin, $start, $stop);
+    background: -o-linear-gradient($origin, $start, $stop);
+    background: -ms-linear-gradient($origin, $start, $stop);
+    background: linear-gradient($origin, $start, $stop);
+    background: $fallback;
+}
+
+@mixin quick-gradient ( $origin: left, $alpha: 0.2, $color: #000 ) {
+    background-image: -webkit-linear-gradient( $origin, fade-out( $color, 1 ), fade-out( $color, $alpha ) );
+    background-image: -moz-linear-gradient( $origin, fade-out( $color, 1 ), fade-out( $color, $alpha ) );
+    background-image: -o-linear-gradient( $origin, fade-out( $color, 1 ), fade-out( $color, $alpha ) );
+    background-image: -ms-linear-gradient( $origin, fade-out( $color, 1 ), fade-out( $color, $alpha ) );
+    background-image: linear-gradient( $origin, fade-out( $color, 1 ), fade-out( $color, $alpha ) );
+}
+
+@mixin font-size ( $sizeValue ) {
+  $remValue: $sizeValue;
+  $pxValue: ( $sizeValue * 10 );
+  font-size: #{$pxValue}px; 
+  font-size: #{$remValue}rem;
+}
+
+@mixin line-height ( $sizeValue ) {
+  $remValue: $sizeValue;
+  $pxValue: ($sizeValue * 10);
+  line-height: #{$pxValue}px; 
+  line-height: #{$remValue}rem;
+}
+
+@mixin baseline ( $size ) {
+  $remValue: ( $size * $baseline-size );
+  $pxValue: ( $remValue * 10 );
+  line-height: #{$pxValue}px; 
+  line-height: #{$remValue}rem;
+}
+
+@mixin arrow( $size, $color, $pos: left ){
+  @if $pos == right {
+      border-top: $size solid transparent;
+      border-bottom: $size solid transparent;
+      border-left: $size solid $color;
+  } @else if $pos == top {
+      border-bottom: $size solid $color;
+      border-left: $size solid transparent;
+      border-right: $size solid transparent;
+  } @else if $pos == bottom {
+      border-left: $size solid transparent;
+      border-right: $size solid transparent;
+      border-top: $size solid $color;
+  } @else {
+      border-top: $size solid transparent;
+      border-bottom: $size solid transparent;
+      border-right:$size solid $color;
+  }
+}
+
+
+// media queries
+$break-phone: 480px;
+$break-tablet: 640px;
+$break-desktop: 768px;
+
+@mixin respond-to( $media ) {
+  @if $media == phone {
+    @media screen and ( min-width: $break-phone ) { @content; }
+  }
+  @else if $media == tablet {
+    @media screen and ( min-width: $break-tablet ) { @content; }
+  }
+  @else if $media == desktop {
+    @media screen and ( min-width: $break-desktop ) { @content; }
+  }
+  @else if {
+    @media screen and ( min-width: $media ) { @content; }
+  }
+}
+
+@mixin placeholder() {
+  &::-webkit-input-placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+}
+
+// placeholder
+%clearfix {
+  *zoom:1;
+}
+%clearfix:after {
+  content:'';
+  display:table;
+  clear:both;
+}
+
+%clearlist{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@function baseline( $size, $unit ){
+  @if $unit == px{
+    @return ( ( $baseline-size * $size ) * 10px );
+  }
+  @if $unit == rem{
+    @return ( ( $baseline-size * $size ) * 1rem );
+  }
+  @if $unit == em{
+    @return ( ( $baseline-size * $size ) * 1em );
+  }
+}
+
+@function cb( $time ){
+  @return all $time cubic-bezier( 0, 1, 0.5, 1 );
+}
+
+%full-width{
+  width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: top;
+}

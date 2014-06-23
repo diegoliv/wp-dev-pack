@@ -1,0 +1,17 @@
+.pure-button{
+	position: relative;
+	padding: 0.6em 1.3em;
+	overflow: hidden;
+	font-weight: 600;
+	background-image: none;
+	@include transition;
+
+	&:hover{ 
+		background-image: none;
+	}
+
+	&.btn-big{font-size: 150%;}
+	&.btn-small{font-size: 70%;}
+	&.btn-full{width: 100%;}
+
+}
