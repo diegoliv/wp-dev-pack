@@ -7,7 +7,7 @@ This repo contains:
 
 - A package.json and gulpfile.js to generate production files;
 - SCSS files for styles;
-- [Jeet Grid System](http://jeet.gs) - For semantic layout;
+- [Jeet Grid System](http://mojotech.github.io/jeet/) - For semantic layout;
 - [BrandColors](http://brandcolors.net/) - For Social Media colors;
 - [Pure](http://purecss.io) - with css reset and basic styles;
 - A `functions.php` file with OOP approach;
