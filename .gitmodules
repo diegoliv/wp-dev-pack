@@ -1,0 +1,3 @@
+[submodule "src/styles/vendors/jeet"]
+	path = src/styles/vendors/jeet
+	url = https://github.com/mojotech/jeet.git
