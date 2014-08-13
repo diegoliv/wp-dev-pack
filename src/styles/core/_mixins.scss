@@ -151,3 +151,35 @@ $break-desktop: 768px;
   display: block;
   vertical-align: top;
 }
+
+@mixin bg-filter( $color, $alpha ){
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    background-color: fade-out( $color, $alpha );
+  }
+}
+
+@mixin keyframes ($animation-name) {
+    @-webkit-keyframes $animation-name{
+        @content;
+    }
+    @-moz-keyframes $animation-name{
+        @content;
+    }
+    @-ms-keyframes $animation-name{
+        @content;
+    }
+    @-o-keyframes $animation-name{
+        @content;
+    }
+    @keyframes $animation-name{
+        @content;
+    }
+}
