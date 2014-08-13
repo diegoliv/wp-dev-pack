@@ -15,3 +15,11 @@ This repo contains:
 ###Notes:
 
 This repo was made for personal use on web development for my company, but feel free to fork and use it.
+
+###Changelog:
+
+####1.0.1
+- Fix missing `background-size` pollyfil;
+
+####1.0.0
+- Initial Commit
