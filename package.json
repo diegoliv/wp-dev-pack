@@ -20,7 +20,7 @@
     "gulp-sass": "~0.7.1",
     "gulp-svgmin": "~0.4.6",
     "gulp-iconfont-css": "0.0.5",
-    "gulp-iconfont": "0.0.7",
+    "gulp-iconfont": "0.1.1",
     "gulp-plumber": "~0.5.6",
     "gulp-notify": "~1.1.1"
   }
