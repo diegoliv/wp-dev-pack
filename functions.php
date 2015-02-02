@@ -3,7 +3,7 @@
 /**
  * Theme functions and definitions
  *
- * @package Nome_do_Tema
+ * @package Theme_Name
  */
 
 // If this file is called directly, abort.
@@ -11,7 +11,7 @@ if ( ! defined( 'WPINC' ) ) {
     die;
 }
 
-class Nome_do_Tema{
+class Theme_Name{
 
     /**
      * Plugin version, used for cache-busting of style and script file references.
@@ -165,16 +165,16 @@ class Nome_do_Tema{
     // Register the menus
     public function register_menus() {
         register_nav_menus( array(
-            'header' => __( 'Menu Principal', $this->theme_slug ),
-            'footer' => __( 'Rodapé', $this->theme_slug ),
+            'header' => __( 'Main Menu', $this->theme_slug ),
+            'footer' => __( 'Footer', $this->theme_slug ),
         ) );
     }
 
     // Register the sidebar
     public function register_sidebar() {
         register_sidebar( array(
-            'name'          => __( 'Blog - Barra Lateral', $this->theme_slug ),
-            'id'            => 'tesla-sidebar',
+            'name'          => __( 'Blog - Sidebar', $this->theme_slug ),
+            'id'            => 'theme-sidebar',
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget'  => '</div>',
             'before_title'  => '<h3 class="widget-title primary header-title">',
@@ -182,9 +182,9 @@ class Nome_do_Tema{
         ) );
 
         register_sidebar( array(
-            'name'          => __( 'Rodapé', $this->theme_slug ),
+            'name'          => __( 'Footer', $this->theme_slug ),
             'id'            => 'footer',
-            'description'   => __( 'Links primários do rodapé', $this->theme_slug ),
+            'description'   => __( 'Primary links of the footer', $this->theme_slug ),
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget'  => '</div>',
             'before_title'  => '<h3 class="widget-title">',
@@ -196,7 +196,7 @@ class Nome_do_Tema{
     // Custom Gravatar in Settings > Discussion
     public function blankgravatar ( $avatar_defaults ) {
         $myavatar = $this->assets_dir . '/img/gravatar.jpg';
-        $avatar_defaults[$myavatar] = __( "Gravatar Customizado", $this->theme_slug );
+        $avatar_defaults[$myavatar] = __( "Custom Gravatar", $this->theme_slug );
         return $avatar_defaults;
     }
 
@@ -262,7 +262,7 @@ class Nome_do_Tema{
 
 }
 
-$theme = new Nome_do_Tema();
+$theme = new Theme_Name();
 
 require get_template_directory() . '/inc/theme.menu-walker.php'; // Custom Walker Class
 require get_template_directory() . '/inc/theme.helpers.php'; // Helper functions

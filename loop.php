@@ -19,8 +19,8 @@
 
 		<!-- post details -->
 		<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-		<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-		<span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
+		<span class="author"><?php _e( 'Published by', 'theme-slug' ); ?> <?php the_author_posts_link(); ?></span>
+		<span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'theme-slug' ), __( '1 Comment', 'theme-slug' ), __( '% Comments', 'theme-slug' )); ?></span>
 		<!-- /post details -->
 
 		<?php the_excerpt(); // Build your custom callback length in functions.php ?>
@@ -36,7 +36,7 @@
 
 	<!-- article -->
 	<article>
-		<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+		<h2><?php _e( 'Sorry, nothing to display.', 'theme-slug' ); ?></h2>
 	</article>
 	<!-- /article -->
 
